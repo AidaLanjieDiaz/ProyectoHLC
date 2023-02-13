@@ -1,0 +1,12 @@
+<!-- <p>
+  slideshow-backdrop works!
+</p> -->
+
+<ion-slides [options]="slidesOpt" >
+  <ion-slide *ngFor="let pelicula of peliculas">
+    <ion-card (click)="verDetalle( pelicula.id )">
+      <img [src]="pelicula.backdrop_path | imagen">
+    </ion-card>
+  </ion-slide>
+
+</ion-slides>
