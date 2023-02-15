@@ -3,7 +3,7 @@ import { ModalController} from '@ionic/angular';
 import { Cast, PeliculaDetalle } from '../../interfaces/interfaces';
 import { MoviesService } from '../../services/movies.service';
 import { DataLocalService } from '../../services/data-local.service';
-import { start } from 'repl';
+
 
 @Component({
   selector: 'app-detalle',
@@ -14,7 +14,10 @@ export class DetalleComponent implements OnInit {
 
   @Input() id: any;
 
-  pelicula: PeliculaDetalle = {poster_path: '', id: ''};
+  pelicula: PeliculaDetalle = {
+    genre: undefined,
+    genres: []
+  };
   actores: Cast[] = [];
   oculto = 150;
   estrella = 'star-outline';

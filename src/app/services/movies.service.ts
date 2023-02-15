@@ -11,7 +11,7 @@ const apiKey = environment.apiKey;
   providedIn: 'root'
 })
 export class MoviesService {
-generos: Genre[] = [];
+public generos: Genre[] = [];
 
   constructor( private http: HttpClient) { }
 
@@ -70,7 +70,7 @@ generos: Genre[] = [];
     return new Promise( resolve => {
 
       this.ejecutarQuery(`/genre/movie/list?a=1`)
-        .subscribe( resp => {
+        .subscribe( (resp: any)  => {
           this.generos = resp['genres'];
           resolve(this.generos);
         });

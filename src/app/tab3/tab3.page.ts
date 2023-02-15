@@ -24,6 +24,13 @@ export class Tab3Page implements OnInit {
   }
 
   async  ngOnInit() {
+   /*  this.peliculas = await this.dataLocal.cargarFavoritos();
+    this.generos = await this.moviesService.cargarGeneros();
+
+    this.pelisPorGenero( this.generos, this.peliculas ); */
+  }
+
+  async ionViewWillEnter() {
     this.peliculas = await this.dataLocal.cargarFavoritos();
     this.generos = await this.moviesService.cargarGeneros();
 
@@ -55,6 +62,9 @@ export class Tab3Page implements OnInit {
       }
     });
 
+    modal.onDidDismiss().then(()=> {
+      this.ionViewWillEnter()
+    })
     modal.present();
 
   }
