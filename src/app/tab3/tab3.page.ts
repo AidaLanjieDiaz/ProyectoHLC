@@ -13,7 +13,6 @@ import { MoviesService } from '../services/movies.service';
 export class Tab3Page implements OnInit {
 
   peliculas: PeliculaDetalle[] = [];
-
   generos: Genre[] = [];
   favoritoGenero: any[] = [];
 
@@ -24,10 +23,6 @@ export class Tab3Page implements OnInit {
   }
 
   async  ngOnInit() {
-   /*  this.peliculas = await this.dataLocal.cargarFavoritos();
-    this.generos = await this.moviesService.cargarGeneros();
-
-    this.pelisPorGenero( this.generos, this.peliculas ); */
   }
 
   async ionViewWillEnter() {
